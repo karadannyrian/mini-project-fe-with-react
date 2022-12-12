@@ -1,5 +1,7 @@
 import { Component } from "react";
 import Login from "../components/Login";
+import Logo from "../asset/logo/logo192.png"
+import Register from "../components/Register";
 
 class LandingPage extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class LandingPage extends Component {
     render() {
         const { title, currentComponentVisible } = this.state
         return (
-            <div style={{ maxWidth: 500, maxHeight: 500 }} className="bg-light container position-absolute top-50 start-50 translate-middle rounded shadow-lg">
+            <div style={{ maxWidth: 680, minHeight: 350 }} className="bg-main container position-absolute top-50 start-50 translate-middle rounded shadow-lg">
                 <div className="mb-3">
                     {currentComponentVisible === null ?
                         <h4 className="p-2">{title}</h4> :
@@ -29,11 +31,16 @@ class LandingPage extends Component {
                                 <h4 className="p-2 text-capitalize">{title}</h4>
                             </div>
                             <div className="col-2 text-end">
-                                <button type="button" className="p-2 btn btn-circle btn-small btn-light" onClick={() => this.handleComponents(currentComponentVisible)}>
+                                <button type="button" className="p-2 btn btn-round btn-small" onClick={() => this.handleComponents(currentComponentVisible)}>
                                     <i className="fa fa-arrow-left"></i>
                                 </button>
                             </div>
                         </div>}
+                </div>
+                <div className="mb-3 px-3 text-center">
+                    <div>
+                        <img src={Logo} alt={Logo}></img>
+                    </div>
                 </div>
                 {currentComponentVisible === null &&
                     <div className="mx-3">
@@ -47,6 +54,7 @@ class LandingPage extends Component {
                         </div>
                     </div>}
                 {currentComponentVisible === 'login' && <Login />}
+                {currentComponentVisible === 'register' && <Register />}
             </div>
         )
     }

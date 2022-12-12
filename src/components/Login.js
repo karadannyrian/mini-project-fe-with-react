@@ -7,8 +7,8 @@ class Login extends Component {
         this.state = {
             dirtyForm: false,
             payloadLogin: {
-                email: null,
-                password: null
+                email: "",
+                password: ""
             },
             loading: false
         }
@@ -48,7 +48,7 @@ class Login extends Component {
         return (
             <div className="mb-3">
                 <div className="mb-3 row">
-                    <label for="inputEmail" className="col-sm-2 col-form-label">Email</label>
+                    <label className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
                         <input id="inputEmail" type="email" className="form-control"
                             required
@@ -63,7 +63,7 @@ class Login extends Component {
                     </div>
                 </div>
                 <div className="mb-3 row">
-                    <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
+                    <label className="col-sm-2 col-form-label">Password</label>
                     <div className="col-sm-10">
                         <input id="inputPassword" type="password" className="form-control"
                             required
@@ -79,9 +79,9 @@ class Login extends Component {
                 </div>
                 <div className="mb-3 center row">
                     <div className="col-12 col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" />
-                            <label class="form-check-label" for="invalidCheck">
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" />
+                            <label className="form-check-label" >
                                 Remember me
                             </label>
                         </div>
